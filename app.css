@@ -6,3 +6,9 @@ p{
     width: 200px;
     border: blue 3px solid;
 }
+.joemama{
+    color: yellow;
+    background-color: aqua;
+    font-style: italic;
+    text-align: left;
+}
