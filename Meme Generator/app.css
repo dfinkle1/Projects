@@ -1,0 +1,21 @@
+.photo {
+  justify-content: center;
+  position: relative;
+}
+.top {
+  color: aqua;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.photo img {
+  max-width: 50%;
+}
+.bot {
+  color: black;
+  bottom: 10px;
+  font-size: 50px;
+  position: absolute;
+  /* text-align: center; */
+}
