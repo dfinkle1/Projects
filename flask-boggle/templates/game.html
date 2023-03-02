@@ -1,0 +1,9 @@
+{%extends 'base.html' %}{%block title%}Game Time {%endblock%}{%block content%}
+<form class="fish">
+  {% for bogs in session['make_board'] %} <br />{{bogs}} {%endfor%}
+
+  <label for="">Guess the Word!</label>
+  <input type="text" />
+  <input type="submit" value="submit" id="subBtn" />
+</form>
+{%endblock%}

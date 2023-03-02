@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css" />
+    <title>Currency Converter</title>
+  </head>
+  <body>
+    {% for msg in get_flashed_messages() %}
+    <p class="flash">{{ msg }}</p>
+    {% endfor %}
+    <form action="/answers" class="converter">
+      <h3>Currency Converter</h3>
+      <label for="input">Convert from:</label>
+      <input type="text" name="inputs" /> <br />
+      <label for="output">Convert to:</label>
+      <input type="text" name="outputs" /> <br />
+      <label for="value">Amount</label>
+      <input type="text" name="values" /> <br />
+      <button>Convert</button>
+    </form>
+    <section class="converter">{%block content%}{%endblock%}</section>
+    <h3>Here is a list of currencies you can convert</h3>
+    {%for item in options%}
+    <li>{{item}}</li>
+    {%endfor%}
+  </body>
+</html>
