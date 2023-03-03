@@ -2,7 +2,7 @@
 
 from flask import Flask, url_for, render_template, redirect, flash, jsonify
 
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 
 from models import db, connect_db, Pet
 from forms import AddPetForm, EditPetForm
@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 connect_db(app)
 db.create_all()
 
-toolbar = DebugToolbarExtension(app)
+# toolbar = DebugToolbarExtension(app)
 
 
 ##############################################################################
