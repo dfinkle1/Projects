@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Hi, {{user.first_name}} {{user.last_name}}!</h3>
+<div>
+  <p>Username: {{user.username}}</p>
+  <p>Email: {{user.email}}</p>
+  <ul>
+    {% for feedback in user.feedback %}
+
+    <li>
+      {{ feedback.title }}
+      <small>{{ feedback.content }}  </small>
+    </li>
+    <form>
+        {{form.hidden_tag()}}
+        <button class="btn btn-primary"
+                formmethod="GET"
+                formaction="/feedback/{{ feedback.id }}/update">
+          Edit
+        </button>
+        <button class="btn btn-danger"
+                formmethod="POST"
+                formaction="/feedback/{{ feedback.id }}/delete">
+          Delete
+        </button>
+      </form>
+
+    {% endfor %}
+
+  <form action="/users/{{user.username}}/feedback/add">
+    <button class="btn btn-success btn-lg">Add feedback</button>
+  </form>
+  <form>
+    <button
+      class="btn btn-danger btn-sm"
+      formaction="/users/{{ user.username }}/delete"
+      formmethod="POST"
+    >
+      Delete User
+    </button>
+  </form>
+</div>
+{% endblock %}
